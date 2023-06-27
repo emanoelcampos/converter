@@ -1,3 +1,3 @@
-# Conversor de Moedas
+# Conversor
 
 em produção...
