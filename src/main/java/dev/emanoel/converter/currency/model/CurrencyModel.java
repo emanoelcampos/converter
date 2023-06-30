@@ -1,6 +1,6 @@
 package dev.emanoel.converter.currency.model;
 
-public class Currency {
+public class CurrencyModel {
 
     private String code;
     private String codein;
