@@ -2,7 +2,7 @@ package dev.emanoel.converter.currency.service;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import dev.emanoel.converter.currency.model.Currency;
+import dev.emanoel.converter.currency.model.CurrencyModel;
 import dev.emanoel.converter.currency.util.GetApiResponse;
 
 import java.io.IOException;
@@ -17,8 +17,8 @@ public class CurrencyService {
         String apiResponse = getApiResponse.getApiResponse(apiUrl);
 
         Gson gson = new Gson();
-        Type type = new TypeToken<Map<String, Currency>>(){}.getType();
-        Map<String, Currency> currencyMap = gson.fromJson(apiResponse, type);
+        Type type = new TypeToken<Map<String, CurrencyModel>>(){}.getType();
+        Map<String, CurrencyModel> currencyMap = gson.fromJson(apiResponse, type);
         return currencyMap.get(currencies).getBid();
     }
 
