@@ -1,4 +1,5 @@
-package dev.emanoel.converter.currency.util;
+package dev.emanoel.converter.currency.utils;
+
 
 import java.io.IOException;
 import java.net.URI;
@@ -6,7 +7,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class GetApiResponse {
+public class ApiResponse {
 
     public String getApiResponse(String apiUrl) throws IOException, InterruptedException {
 
