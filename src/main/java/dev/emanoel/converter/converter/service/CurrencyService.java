@@ -1,11 +1,11 @@
-package dev.emanoel.converter.currency.service;
+package dev.emanoel.converter.converter.service;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import dev.emanoel.converter.currency.model.CurrencyModel;
-import dev.emanoel.converter.currency.utils.ApiResponse;
-import dev.emanoel.converter.currency.utils.FormatNumber;
+import dev.emanoel.converter.converter.model.CurrencyModel;
+import dev.emanoel.converter.converter.utils.ApiResponse;
+import dev.emanoel.converter.converter.utils.FormatNumber;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

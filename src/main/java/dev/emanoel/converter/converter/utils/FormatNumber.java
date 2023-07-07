@@ -1,8 +1,4 @@
-package dev.emanoel.converter.currency.utils;
-
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
+package dev.emanoel.converter.converter.utils;
 
 public class FormatNumber {
     public static String formatDecimal(double number) {

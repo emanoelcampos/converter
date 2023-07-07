@@ -1,4 +1,4 @@
-package dev.emanoel.converter.currency.model;
+package dev.emanoel.converter.converter.model;
 
 public class CurrencyModel {
 

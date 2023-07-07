@@ -1,6 +1,6 @@
-package dev.emanoel.converter.currency.controller;
+package dev.emanoel.converter.converter.controller;
 
-import dev.emanoel.converter.currency.service.CurrencyService;
+import dev.emanoel.converter.converter.service.CurrencyService;
 
 import java.io.IOException;
 
@@ -10,17 +10,17 @@ public class CurrencyController {
 
     private CurrencyService currencyService;
 
-    public CurrencyController(CurrencyService currencyService) {
-        this.currencyService = currencyService;
+    public CurrencyController() {
+        this.currencyService = new CurrencyService();
     }
 
     public double processExchange(String currencies, double value){
         try {
             return currencyService.calculateExchange(API_URL, currencies, value);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Erro de IO ao obter cotações de moeda. Verifique sua conexão de internet e tente novamente.", e);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("A solicitação de cotações de moeda foi interrompida. Tente novamente mais tarde.", e);
         }
     }
 
