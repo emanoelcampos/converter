@@ -7,22 +7,26 @@ import javax.swing.*;
 
 public class MainFrame {
 
-
-    private final CurrencyFrame currencyFrame;
-    private final TemperatureFrame temperatureFrame;
+    private final Converter[] converters;
 
     public MainFrame() {
-        this.currencyFrame = new CurrencyFrame();
-        this.temperatureFrame = new TemperatureFrame();
+        this.converters = initializeConverters();
     }
 
-    public void showMenu() {
-        String[] converterOptions = {
-                "Conversor de Moedas",
-                "Conversor de Temperatura"
+    private Converter[] initializeConverters() {
+        return new Converter[]{
+                new CurrencyFrame(),
+                new TemperatureFrame()
         };
+    }
 
-        String conversorChoice = (String) JOptionPane.showInputDialog(
+    public void showMainMenu() {
+        String[] converterOptions = new String[converters.length];
+        for (int i = 0; i < converters.length; i++) {
+            converterOptions[i] = converters[i].getName();
+        }
+
+        String converterChoice = (String) JOptionPane.showInputDialog(
                 null,
                 "Escolha uma opção:",
                 "Conversor",
@@ -31,11 +35,11 @@ public class MainFrame {
                 converterOptions,
                 converterOptions[0]);
 
-        if (conversorChoice.equals("Conversor de Moedas")) {
-            currencyFrame.currencyMenu();
-
-        } else if (conversorChoice.equals("Conversor de Temperatura")) {
-            temperatureFrame.temperatureMenu();
+        for (Converter converter : converters) {
+            if (converter.getName().equals(converterChoice)) {
+                converter.showMenu();
+                break;
+            }
         }
 
     }
