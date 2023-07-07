@@ -1,4 +1,4 @@
-package dev.emanoel.converter.view.temperature;
+package dev.emanoel.converter.temperature.view;
 
 import javax.swing.*;
 
