@@ -2,7 +2,6 @@ package dev.emanoel.converter.converter.service;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import dev.emanoel.converter.converter.model.CurrencyModel;
 import dev.emanoel.converter.converter.utils.ApiResponse;
 import dev.emanoel.converter.converter.utils.FormatNumber;
@@ -22,7 +21,7 @@ public class CurrencyService {
      * @param apiUrl     URL da API de cotações de moedas
      * @param currencies Moedas desejadas
      * @return Objeto CurrencyModel contendo as informações da moeda
-     * @throws IOException se ocorrer um erro de I/O durante a chamada à API
+     * @throws IOException          se ocorrer um erro de I/O durante a chamada à API
      * @throws InterruptedException se a thread for interrompida durante a chamada à API
      */
     public CurrencyModel getCurrencyModelFromAPI(String apiUrl, String currencies) throws IOException, InterruptedException {
@@ -30,7 +29,8 @@ public class CurrencyService {
         String response = apiResponse.getApiResponse(apiUrl);
 
         Gson gson = new Gson();
-        Type type = new TypeToken<Map<String, CurrencyModel>>(){}.getType();
+        Type type = new TypeToken<Map<String, CurrencyModel>>() {
+        }.getType();
         Map<String, CurrencyModel> currencyMap = gson.fromJson(response, type);
         return currencyMap.get(currencies);
     }
@@ -52,7 +52,7 @@ public class CurrencyService {
      * @param currencies Moedas desejadas
      * @param value      Valor a ser convertido
      * @return Valor convertido
-     * @throws IOException se ocorrer um erro de I/O durante a chamada à API
+     * @throws IOException          se ocorrer um erro de I/O durante a chamada à API
      * @throws InterruptedException se a thread for interrompida durante a chamada à API
      */
     public double calculateExchange(String apiUrl, String currencies, double value) throws IOException, InterruptedException {
