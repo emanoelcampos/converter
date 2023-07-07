@@ -1,7 +1,7 @@
-package dev.emanoel.converter.view.menu;
+package dev.emanoel.converter;
 
-import dev.emanoel.converter.view.currency.CurrencyFrame;
-import dev.emanoel.converter.view.temperature.TemperatureFrame;
+import dev.emanoel.converter.converter.view.CurrencyFrame;
+import dev.emanoel.converter.temperature.view.TemperatureFrame;
 
 import javax.swing.*;
 
