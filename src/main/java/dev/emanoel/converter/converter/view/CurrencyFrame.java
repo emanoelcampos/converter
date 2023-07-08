@@ -1,5 +1,7 @@
 package dev.emanoel.converter.converter.view;
 
+import dev.emanoel.converter.Converter;
+import dev.emanoel.converter.MainFrame;
 import dev.emanoel.converter.converter.controller.CurrencyController;
 
 import javax.swing.*;
@@ -8,12 +10,22 @@ import java.io.IOException;
 /**
  * Classe responsável por exibir a interface de conversão de moedas ao usuário.
  */
-public class CurrencyFrame {
+public class CurrencyFrame implements Converter {
 
     private final CurrencyController currencyController;
 
     public CurrencyFrame() {
         this.currencyController = new CurrencyController();
+    }
+
+    @Override
+    public String getName() {
+        return "Conversor de Moedas";
+    }
+
+    @Override
+    public void showMenu() {
+        currencyMenu();
     }
 
     /**
@@ -157,8 +169,31 @@ public class CurrencyFrame {
         JOptionPane.showMessageDialog(
                 null,
                 "O valor da conversão é de: " + currencySymbol + " " + exchangeResult,
-                "Resultado",
+                "Conversão Concluída",
                 JOptionPane.INFORMATION_MESSAGE);
-    }
 
+        int confirmOption = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja continuar?",
+                "Conversão Concluída",
+                JOptionPane.YES_NO_CANCEL_OPTION);
+
+        if (confirmOption == JOptionPane.YES_OPTION) {
+            MainFrame mainFrame = new MainFrame();
+            mainFrame.showMainMenu();
+        } else if (confirmOption == JOptionPane.NO_OPTION) {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Programa finalizado.",
+                    null,
+                    JOptionPane.PLAIN_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Programa concluído.",
+                    null,
+                    JOptionPane.PLAIN_MESSAGE);
+        }
+    }
 }
+
