@@ -21,8 +21,6 @@ public class CurrencyService {
      * @param apiUrl     URL da API de cotações de moedas
      * @param currencies Moedas desejadas
      * @return Objeto CurrencyModel contendo as informações da moeda
-     * @throws IOException          se ocorrer um erro de I/O durante a chamada à API
-     * @throws InterruptedException se a thread for interrompida durante a chamada à API
      */
     public CurrencyModel getCurrencyModelFromAPI(String apiUrl, String currencies) throws IOException, InterruptedException {
         ApiResponse apiResponse = new ApiResponse();
@@ -52,8 +50,6 @@ public class CurrencyService {
      * @param currencies Moedas desejadas
      * @param value      Valor a ser convertido
      * @return Valor convertido
-     * @throws IOException          se ocorrer um erro de I/O durante a chamada à API
-     * @throws InterruptedException se a thread for interrompida durante a chamada à API
      */
     public double calculateExchange(String apiUrl, String currencies, double value) throws IOException, InterruptedException {
         CurrencyModel currencyModel = getCurrencyModelFromAPI(apiUrl, currencies);
