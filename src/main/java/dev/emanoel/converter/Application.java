@@ -9,7 +9,7 @@ public class Application {
 
         SwingUtilities.invokeLater(() -> {
             MainFrame window = new MainFrame();
-            window.showMenu();
+            window.showMainMenu();
         });
     }
 }
