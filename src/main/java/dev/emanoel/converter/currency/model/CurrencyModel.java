@@ -1,4 +1,4 @@
-package dev.emanoel.converter.converter.model;
+package dev.emanoel.converter.currency.model;
 
 /**
  * Classe que representa o modelo de uma moeda.

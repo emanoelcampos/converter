@@ -1,4 +1,4 @@
-package dev.emanoel.converter.converter.utils;
+package dev.emanoel.converter.currency.utils;
 
 
 import java.io.IOException;

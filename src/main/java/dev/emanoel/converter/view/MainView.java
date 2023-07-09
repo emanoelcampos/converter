@@ -1,26 +1,26 @@
-package dev.emanoel.converter;
+package dev.emanoel.converter.view;
 
-import dev.emanoel.converter.converter.view.CurrencyFrame;
-import dev.emanoel.converter.temperature.view.TemperatureFrame;
+import dev.emanoel.converter.currency.view.CurrencyView;
+import dev.emanoel.converter.temperature.view.TemperatureView;
 
 import javax.swing.*;
 
-public class MainFrame {
+public class MainView {
 
     private final Converter[] converters;
 
-    public MainFrame() {
+    public MainView() {
         this.converters = initializeConverters();
     }
 
     private Converter[] initializeConverters() {
         return new Converter[]{
-                new CurrencyFrame(),
-                new TemperatureFrame()
+                new CurrencyView(),
+                new TemperatureView()
         };
     }
 
-    public void showMainMenu() {
+    public void showConverterMenu() {
         String[] converterOptions = new String[converters.length];
         for (int i = 0; i < converters.length; i++) {
             converterOptions[i] = converters[i].getName();
@@ -37,7 +37,7 @@ public class MainFrame {
 
         for (Converter converter : converters) {
             if (converter.getName().equals(converterChoice)) {
-                converter.showMenu();
+                converter.getConverterMenu();
                 break;
             }
         }

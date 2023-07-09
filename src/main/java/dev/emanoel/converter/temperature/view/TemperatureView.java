@@ -1,10 +1,10 @@
 package dev.emanoel.converter.temperature.view;
 
-import dev.emanoel.converter.Converter;
+import dev.emanoel.converter.view.Converter;
 
 import javax.swing.*;
 
-public class TemperatureFrame implements Converter {
+public class TemperatureView implements Converter {
 
     @Override
     public String getName() {
@@ -12,11 +12,11 @@ public class TemperatureFrame implements Converter {
     }
 
     @Override
-    public void showMenu() {
-        temperatureMenu();
+    public void getConverterMenu() {
+        showTemperatureMenu();
     }
 
-    public void temperatureMenu() {
+    public void showTemperatureMenu() {
         JOptionPane.showMessageDialog(null, "Em desenvolvimento!",
                 "Temperatura", JOptionPane.WARNING_MESSAGE);
     }

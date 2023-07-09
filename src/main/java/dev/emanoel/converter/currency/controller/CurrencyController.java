@@ -1,6 +1,6 @@
-package dev.emanoel.converter.converter.controller;
+package dev.emanoel.converter.currency.controller;
 
-import dev.emanoel.converter.converter.service.CurrencyService;
+import dev.emanoel.converter.currency.service.CurrencyService;
 
 import java.io.IOException;
 
