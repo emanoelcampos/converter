@@ -2,6 +2,3 @@
 
 ## Moedas
 
-## Temperatura
-
-em produção...
